@@ -1,9 +1,9 @@
 import React from "react";
 
-export const HomePage = (props) => {
+export const Notfound = () => {
   return (
     <div>
-      <h1>home page</h1>
+      <h1>the page not found</h1>
     </div>
   );
 };

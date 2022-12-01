@@ -1,23 +1,26 @@
-import { Route, Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
+import { About, Contact, Games, Home, Movies, Notfound } from "./pages";
+import { Sidebar } from "./components/sidebar.component.jsx";
+
 import "./App.css";
-import { Footer } from "./components/footer/footer";
-import { NavBar } from "./components/navbar/navBar";
-import { DvdPage, NotFoundPage, HomePage } from "./pages";
 
 export const App = () => {
   return (
-    <div className="grid-container">
-      <div className="header">
-        <NavBar />
+    <div className="App">
+      <div className="sidebar">
+        <Sidebar />
       </div>
-      <div className="main">
+      <div class="main">
         <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-          <Route path="/dvd shop" element={<DvdPage />}></Route>
-          <Route path="*" element={<NotFoundPage />}></Route>
+          <Route path="/about" element={<About />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/contactus" element={<Contact />} />
+          <Route path="/games" element={<Games />} />
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Notfound />} />
         </Routes>
       </div>
-      <Footer styles="footer" />
     </div>
   );
 };
